@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<ul>
+    <li style='color: purple'>1</li>
+    <li style='color: purple'>2</li>
+    <li style='color: purple'>3</li>
+    <li style='color: purple'>4</li>
+    <span>3</span>
+</ul>
+<div id="divs">div <span>11</span> <span>22</span></div>
+    <script src="dom.js"></script>
+    <script>
+        var items=$('li');
+        var div=$('div');
+        items.attr('font-size','20px').removeAttr('color');
+        div.attr('id');
+        div.css('color');
+        div.css({
+            background:'black',
+            color:'white',
+            width:'80px',
+        });
+        div.on('mouseover',function(){
+            div.css('color','red');
+        })
+        items.hover(function(){
+            items.css('background','yellow');
+        },function(){
+            items.css('background','');
+        })
+        $('li:nth-child(2)').parent().next().find('span').hide();
+    </script>
+</body>
+</html>
