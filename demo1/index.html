@@ -15,16 +15,21 @@
 <div id="divs">div <span>11</span> <span>22</span></div>
     <script src="dom.js"></script>
     <script>
+        console.assert(typeof $==='function')
         var items=$('li');
         var div=$('div');
+        console.assert(items.attr('font-size','20px')===items)
         items.attr('font-size','20px').removeAttr('color');
+        console.assert(div.attr('id') !== undefined)
         div.attr('id');
+        console.assert(div.css('color') !== undefined)
         div.css('color');
         div.css({
             background:'black',
             color:'white',
             width:'80px',
         });
+        console.assert(div.on !== undefined)
         div.on('mouseover',function(){
             div.css('color','red');
         })
@@ -33,6 +38,9 @@
         },function(){
             items.css('background','');
         })
+        console.assert($('li:nth-child(2)').parent()[0].tagName === "UL")
+        console.assert($('li:nth-child(2)').parent().next() !=='undefined')
+        console.assert(div.find('span') !=='undefined')
         $('li:nth-child(2)').parent().next().find('span').hide();
     </script>
 </body>
