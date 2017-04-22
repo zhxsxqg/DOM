@@ -10,23 +10,23 @@ window.$=function(seletor){
             arr.push(seletor[i]);
         }
     }
-    arr.attr = function(attribute,value){//设置或获取属性
+    arr.attr = function(attr,value){//设置或获取属性
         if(value!== undefined){
             for (var i = 0; i < arr.length; i++) {
-                arr[i].style[attribute]=value;
+                arr[i].setAttribute(attr,value);
             }
             return arr;
         }else {
             var result=[];
             for (var i = 0; i < arr.length; i++) {
-                result.push(arr[i].getAttribute(attribute));
+                result.push(arr[i].getAttribute(attr));
             }
             return result;
         }
     }
-    arr.removeAttr = function(attribute){//删除属性
+    arr.removeAttr = function(attr){//删除属性
         for (var i = 0; i < arr.length; i++) {
-            arr[i].style.removeProperty(attribute);
+            arr[i].removeAttribute(attr);
         }
         return arr;
     }
